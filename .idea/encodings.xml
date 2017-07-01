@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-aop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-data" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-ioc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-jdbc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-mvc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-rest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-tx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-ws" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

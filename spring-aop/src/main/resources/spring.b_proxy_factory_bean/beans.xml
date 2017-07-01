@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1、目标类-->
+    <bean id="bookService" class="website.hanson.spring.b_proxy_factory_bean.BookServiceImpl"/>
+
+    <!--2、创建通知类-->
+    <!--2.1、前置通知-->
+    <bean id="myMethodBeforeAdvice" class="website.hanson.spring.b_proxy_factory_bean.MyMethodBeforeAdvice"/>
+    <!--2.2、环绕通知-->
+    <bean id="myMethodInterceptor" class="website.hanson.spring.b_proxy_factory_bean.MyMethodInterceptor"/>
+    <!--2.3、后置通知-->
+    <bean id="myAfterReturningAdvice" class="website.hanson.spring.b_proxy_factory_bean.MyAfterReturningAdvice"/>
+    <!--2.4、异常抛出通知-->
+    <bean id="myThrowsAdvice" class="website.hanson.spring.b_proxy_factory_bean.MyThrowsAdvice"/>
+
+
+    <!--3、利用spring矿建提供的ProxyFactoryBean创建代理类
+     * 使用工厂bean FactoryBean,底层调用getObject()返回特殊Bean
+     * ProxyFactoryBean(FactoryBean工厂bean的一个实现) 用于创建代理工厂bean,生成特殊代理对象
+         interfaces:确定接口们
+                 通过<array>可以设置多个值,只有一个值时,value=""
+         target:确定目标对象
+         interceptorNames:通知切面类的名称,类型String[]
+         optimize:强制使用cglib代理
+             <property name="optimize" value="true"/>
+     * 底层机制：
+                 如果目标类有接口，则使用JDK的动态代理
+                 如果没有接口,采用cglib字节码增强
+                 如果声明optimize=true,则无论是否有接口，都使用cglib
+    -->
+
+    <!--3.1、环绕通知-->
+    <bean id="proxyBookServiceAroundAdvice" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="myMethodInterceptor"/>
+        <property name="target" ref="bookService"/>
+        <property name="interfaces">
+            <array>
+                <value>website.hanson.spring.b_proxy_factory_bean.BookService</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--3.2、前置通知-->
+    <bean id="proxyBookServiceBeforeAdvice" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="myMethodBeforeAdvice"/>
+        <property name="target" ref="bookService"/>
+        <property name="interfaces">
+            <array>
+                <value>website.hanson.spring.b_proxy_factory_bean.BookService</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--3.3、后置通知-->
+    <bean id="proxyBookServiceThrowsAdvice" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="myThrowsAdvice"/>
+        <property name="target" ref="bookService"/>
+        <property name="interfaces">
+            <array>
+                <value>website.hanson.spring.b_proxy_factory_bean.BookService</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--3.4、抛出异常通知-->
+    <bean id="proxyBookServiceAfterReturningAdvice" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interceptorNames" value="myAfterReturningAdvice"/>
+        <property name="target" ref="bookService"/>
+        <property name="interfaces">
+            <array>
+                <value>website.hanson.spring.b_proxy_factory_bean.BookService</value>
+            </array>
+        </property>
+    </bean>
+</beans>

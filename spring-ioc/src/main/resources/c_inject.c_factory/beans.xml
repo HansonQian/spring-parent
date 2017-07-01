@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1、创建工厂实例-->
+
+    <bean id="myJDKProxyBeanFactory" class="website.hanson.spring.c_inject.c_factory.MyBeanFactory"/>
+
+    <!--2、获取实例-->
+
+    <bean id="teacherService" factory-bean="myJDKProxyBeanFactory" factory-method="createService"/>
+
+</beans>

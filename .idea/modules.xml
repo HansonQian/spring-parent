@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-aop/spring-aop.iml" filepath="$PROJECT_DIR$/spring-aop/spring-aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-data/spring-data.iml" filepath="$PROJECT_DIR$/spring-data/spring-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ioc/spring-ioc.iml" filepath="$PROJECT_DIR$/spring-ioc/spring-ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jdbc/spring-jdbc.iml" filepath="$PROJECT_DIR$/spring-jdbc/spring-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc/spring-mvc.iml" filepath="$PROJECT_DIR$/spring-mvc/spring-mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-parent.iml" filepath="$PROJECT_DIR$/spring-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-rest/spring-rest.iml" filepath="$PROJECT_DIR$/spring-rest/spring-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test/spring-test.iml" filepath="$PROJECT_DIR$/spring-test/spring-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-tx/spring-tx.iml" filepath="$PROJECT_DIR$/spring-tx/spring-tx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-ws/spring-ws.iml" filepath="$PROJECT_DIR$/spring-ws/spring-ws.iml" />
+    </modules>
+  </component>
+</project>

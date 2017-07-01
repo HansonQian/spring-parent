@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--1、目标类-->
+    <bean id="personService" class="website.hanson.spring.c_spring_aop.PersonServiceImpl"/>
+
+    <!--2、切面类-->
+    <bean id="personAspect" class="website.hanson.spring.c_spring_aop.PersonAspect"/>
+
+    <!--3、aop编程
+          #>3.1 导入命名空间
+          #>3.2 使用<aop:config>进行配置
+               <aop:pointcut>：切入点,从目标对象获得具体的方法
+               <aop:advisor>:特殊的切面，只有一个通知和一个切入点
+                   advice-ref：通知引用
+                   pointcut-ref：切入点引用
+          #>3.3 切入点表达式：
+                 execution(     *       website.hanson.spring.c_spring_aop.   *       .     *          (..)  )
+                  选择方法   返回值任意         		    包           		 类名任意     方法名任意     参数任意
+          #>3.4 proxy-target-class="false"
+                       默认使用JDK动态代理
+   -->
+    <aop:config proxy-target-class="false">
+        <aop:pointcut id="myPointcut"
+                      expression="execution(* website.hanson.spring.c_spring_aop.*.*(..))"/>
+        <aop:advisor advice-ref="personAspect" pointcut-ref="myPointcut"/>
+    </aop:config>
+
+</beans>

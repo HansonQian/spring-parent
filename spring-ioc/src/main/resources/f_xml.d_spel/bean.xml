@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+      <property name="name" value="#{'jack'}"/>
+      通过另一个bean获得属性，调用方法
+      <property name="name" value="#{car.name.toUpperCase()}"/>
+      ?：如果对象不为null，将调用方法
+       <property name="name" value="#{car.name?.toUpperCase()}"/>
+    -->
+    <bean id="car" class="website.hanson.spring.f_xml.d_spel.Car">
+        <property name="name" value="#{'jack'}"/>
+        <property name="pi" value="#{T(java.lang.Math).PI}"/>
+    </bean>
+
+</beans>

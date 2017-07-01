@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-aop" />
+        <module name="spring-data" />
+        <module name="spring-ioc" />
+        <module name="spring-jdbc" />
+        <module name="spring-mvc" />
+        <module name="spring-rest" />
+        <module name="spring-test" />
+        <module name="spring-tx" />
+        <module name="spring-ws" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="spring-aop" target="1.7" />
+      <module name="spring-data" target="1.7" />
+      <module name="spring-ioc" target="1.7" />
+      <module name="spring-jdbc" target="1.7" />
+      <module name="spring-mvc" target="1.7" />
+      <module name="spring-parent" target="1.7" />
+      <module name="spring-rest" target="1.7" />
+      <module name="spring-test" target="1.7" />
+      <module name="spring-tx" target="1.7" />
+      <module name="spring-ws" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

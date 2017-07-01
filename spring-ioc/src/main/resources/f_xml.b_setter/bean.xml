@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- setter方法注入
+            * 普通数据
+                <property name="" value="值">
+                等效
+                <property name="">
+                    <value>值
+            * 引用数据
+                <property name="" ref="另一个bean">
+                等效
+                <property name="">
+                    <ref bean="另一个bean"/>
+
+     -->
+
+    <bean id="city" class="website.hanson.spring.f_xml.b_setter.City">
+        <property name="address" ref="address"/>
+        <property name="cityName" value="无锡"/>
+    </bean>
+
+
+    <bean id="address" class="website.hanson.spring.f_xml.b_setter.Address">
+        <property name="id" value="123"/>
+        <property name="name" value="新区"/>
+    </bean>
+
+
+</beans>

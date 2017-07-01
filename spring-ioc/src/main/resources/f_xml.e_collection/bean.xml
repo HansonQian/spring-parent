@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+        集合的注入都是给<property>添加属性
+        数组 <array>
+        List <list>
+        Map <map>
+        Set <set>
+        Properties <props>
+
+        普通数据:<value>
+        引用数据:<ref>
+    -->
+
+    <bean id="collData" class="website.hanson.spring.f_xml.e_collection.CollectionData">
+        <property name="arrayData">
+            <array>
+                <value>hello</value>
+                <value>world</value>
+            </array>
+        </property>
+
+        <property name="listData">
+            <list>
+                <value>钱</value>
+                <value>海</value>
+                <value>生</value>
+            </list>
+        </property>
+
+        <property name="setData">
+            <set>
+                <value>张</value>
+                <value>三</value>
+                <value>丰</value>
+            </set>
+        </property>
+
+        <property name="mapData">
+            <map>
+                <entry key="jack" value="杰克"/>
+                <entry>
+                    <key>
+                        <value>rose</value>
+                    </key>
+                    <value>露丝</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="propsData">
+            <props>
+                <prop key="高富帅">嫐</prop>
+                <prop key="白富美">嬲</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>
