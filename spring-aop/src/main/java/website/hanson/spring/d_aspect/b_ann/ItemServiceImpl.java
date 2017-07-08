@@ -7,6 +7,7 @@ package website.hanson.spring.d_aspect.b_ann;
  * Date:2017/7/1 13:08
  * Version:V1.0
  */
+@Service
 public class ItemServiceImpl implements ItemService {
     @Override
     public void addItem() throws Exception {
