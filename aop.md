@@ -229,8 +229,21 @@ try{
 
 #### 3.5基于注解方式来开发AOP
 
->
+> 程序路径website.hanson.spring.d_aspect.b_ann
 
 - 所有的Bean交给Spring管理
+    - website.hanson.spring.d_aspect.b_ann.ItemServiceImpl
+        - 添加@Service注解
+    - website.hanson.spring.d_aspect.b_ann.ItemAspect
+        - 添加@Aspect注解
+        - 添加@Component注解
+- 配置文件spring.d_aspect.b_ann/beans.xml
 - 配置组件扫描器
-- 
+    - <context:component-scan base-package="website.hanson.spring.d_aspect.b_ann"/>
+- 切面类编写
+    - website.hanson.spring.d_aspect.b_ann.ItemAspect
+- 启动AOP配置方式
+    - <aop:aspectj-autoproxy />
+    - proxy-target-class="fasle"，默认为false即使用JDK动态代理,改为true则使用cglib代理
+- 测试代码
+    - website.hanson.spring.d_aspect.b_ann.TestAspectBaseOnAnnotation
